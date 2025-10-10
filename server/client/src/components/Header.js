@@ -52,7 +52,7 @@ export default function Header() {
         <header style={{ position: 'fixed', top: 0, left: 0, right: 0, height: 70, background: '#f5f5f5', zIndex: 100 }}>
             <div style={{ display: 'flex', alignItems: 'center', height: '100%', padding: '0 20px' }}>
                 <img src="/favicon.ico" alt="favicon" style={{ width: 32, height: 32, marginRight: 16 }} />
-                <select style={{ marginRight: 18 }} value={idioma} onChange={e => setIdioma(e.target.value)}>
+                <select style={{ marginRight: 40 }} value={idioma} onChange={e => setIdioma(e.target.value)}>
                     <option>Español</option>
                     <option>Inglés</option>
                     <option>Francés</option>
@@ -63,7 +63,7 @@ export default function Header() {
                 <span style={{ marginLeft: 16 }}>Online: {online}</span>
                 <span style={{ flex: 1, textAlign: 'center' }}>{fechaHora}</span>
                 {logueado && (
-                    <button style={{ marginLeft: 'auto', background: '#e74c3c', color: '#fff', fontWeight: 600, borderRadius: 6, padding: '8px 18px', border: 'none', cursor: 'pointer' }} onClick={handleLogout}>Cerrar sesión</button>
+                    <button style={{ background: '#e74c3c', color: '#fff', fontWeight: 600, borderRadius: 6, padding: '8px 18px', border: 'none', cursor: 'pointer' }} onClick={handleLogout}>Cerrar sesión</button>
                 )}
             </div>
         </header>
