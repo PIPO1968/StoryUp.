@@ -7,7 +7,8 @@ export default function Profile() {
     const email = localStorage.getItem('email') || 'juanp@example.com';
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/perfil/${email}`)
+        const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+        fetch(`${API_URL}/api/perfil/${email}`)
             .then(res => res.json())
             .then(data => {
                 if (data.ok) {
@@ -22,7 +23,7 @@ export default function Profile() {
             const reader = new FileReader();
             reader.onloadend = async () => {
                 setAvatar(reader.result);
-                await fetch(`http://localhost:5000/api/perfil/${email}`, {
+                await fetch(`${API_URL}/api/perfil/${email}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

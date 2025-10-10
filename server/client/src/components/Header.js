@@ -27,7 +27,8 @@ export default function Header() {
     useEffect(() => {
         const fetchStatus = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/status');
+                const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+                const res = await fetch(`${API_URL}/api/status`);
                 const data = await res.json();
                 setUsuarios(data.total);
                 setOnline(data.online);
