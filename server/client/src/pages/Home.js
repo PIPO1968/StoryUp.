@@ -1,7 +1,9 @@
 import React from 'react';
 export default function Home() {
     return (
-        <div style={{ padding: 40, maxWidth: 1000, margin: '40px 0 40px 60px', background: '#f8f9fa', borderRadius: 16, boxShadow: '0 2px 12px #0001', float: 'left' }}>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+            {/* Bloque principal a la izquierda */}
+            <div style={{ padding: 40, maxWidth: 1000, margin: '40px 0 40px 60px', background: '#f8f9fa', borderRadius: 16, boxShadow: '0 2px 12px #0001', flex: '1 1 0%' }}>
             {/* Bloque superior: texto de bienvenida y logo */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
                 <div style={{ flex: 1, textAlign: 'left' }}>
@@ -51,5 +53,17 @@ export default function Home() {
                 <a href="/login" style={{ background: '#28a745', color: '#fff', padding: '14px 32px', borderRadius: 8, fontWeight: 600, fontSize: '1.1rem', textDecoration: 'none', boxShadow: '0 1px 6px #0001', transition: 'background 0.2s' }}>Iniciar sesión</a>
             </div>
         </div>
+        {/* Bloque patrocinadores a la derecha */}
+        <div style={{ width: 320, minWidth: 220, margin: '40px 40px 40px 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '32px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
+            <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.3rem', marginBottom: 18, letterSpacing: 1 }}>PATROCINADO POR:</h3>
+            {/* Aquí se mostrarán los logos y nombres de empresas */}
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
+                {/* Ejemplo de empresa patrocinadora */}
+                {/* <img src="/logo-empresa1.png" alt="Empresa 1" style={{ width: 80, marginBottom: 6 }} /> */}
+                {/* <span style={{ fontWeight: 600, color: '#333' }}>Empresa 1</span> */}
+                {/* Puedes añadir más empresas aquí */}
+            </div>
+        </div>
+    </div>
     );
 }
