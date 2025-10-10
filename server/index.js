@@ -6,6 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Middleware para permitir 'unsafe-eval' en scripts (React build)
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "script-src 'self' 'unsafe-eval' 'unsafe-inline' *; object-src 'self'");
+    next();
+});
+
 // Conexión a MongoDB Atlas
 mongoose.connect('mongodb+srv://pipocanarias_db_user:PaLMeRiTa1968@teamsoccer.a468utm.mongodb.net/storyup?retryWrites=true&w=majority', {
     useNewUrlParser: true,
@@ -13,9 +19,21 @@ mongoose.connect('mongodb+srv://pipocanarias_db_user:PaLMeRiTa1968@teamsoccer.a4
 });
 
 // Rutas base
-app.get('/', (req, res) => {
-    res.send('API de StoryUp funcionando');
-});
+
+const path = require('path');
+const fs = require('fs');
+const buildPath = path.join(__dirname, '../client/build');
+if (fs.existsSync(buildPath)) {
+    app.use(express.static(buildPath));
+    app.get('*', (req, res) => {
+        if (req.path.startsWith('/api')) return res.status(404).send('API not found');
+        res.sendFile(path.join(buildPath, 'index.html'));
+    });
+} else {
+    app.get('/', (req, res) => {
+        res.send('API de StoryUp funcionando');
+    });
+}
 
 
 // Modelo de usuario (colección 'usuarios')
