@@ -36,12 +36,8 @@ if (fs.existsSync(buildPath)) {
         res.send('API de StoryUp funcionando');
     });
 }
-// Handler de rutas del frontend (debe ir al final)
-if (fs.existsSync(buildPath)) {
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(buildPath, 'index.html'));
-    });
-}
+// Handler de rutas del frontend (debe ir al final, después de todas las rutas API)
+
 
 
 // Modelo de usuario (colección 'usuarios')
@@ -140,6 +136,13 @@ app.get('/api/status', async (req, res) => {
         res.status(500).json({ error: 'Error al obtener estado.' });
     }
 });
+
+// Handler de rutas del frontend (debe ir al final)
+if (fs.existsSync(buildPath)) {
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(buildPath, 'index.html'));
+    });
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
