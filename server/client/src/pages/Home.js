@@ -54,9 +54,12 @@ export default function Home() {
                 </div>
             </div>
             {/* Bloque patrocinadores a la derecha */}
-            <div style={{ width: 320, minWidth: 220, margin: '40px 40px 40px 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '32px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
+            <div style={{ width: 320, minWidth: 220, margin: '40px 40px 0 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '32px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
                 <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.3rem', marginBottom: 18, letterSpacing: 1 }}>PATROCINADO POR:</h3>
-                <img src="/logoeducacion.jpg" alt="Logo Educación" style={{ width: 120, marginBottom: 12, borderRadius: 8, boxShadow: '0 1px 6px #0002' }} />
+            </div>
+            {/* Logo patrocinador debajo del bloque amarillo */}
+            <div style={{ width: 320, minWidth: 220, margin: '18px 40px 40px 0', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                <img src="/logoeducacion.jpg" alt="Logo Educación" style={{ width: 120, borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 18 }} />
                 <span style={{ fontWeight: 600, color: '#333', fontSize: '1.05rem' }}>Educación Sostenible</span>
             </div>
         </div>
