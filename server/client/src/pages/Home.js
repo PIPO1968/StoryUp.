@@ -57,10 +57,10 @@ export default function Home() {
             <div style={{ width: 320, minWidth: 220, margin: '40px 40px 0 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '32px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
                 <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.3rem', marginBottom: 18, letterSpacing: 1 }}>PATROCINADO POR:</h3>
             </div>
-            {/* Logo patrocinador debajo del bloque amarillo, alineado a la izquierda y más pequeño */}
-            <div style={{ width: 220, minWidth: 120, margin: '18px 40px 40px 0', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>
-                <img src="/logoeducacion.jpg" alt="Logo Educación" style={{ width: 70, borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 12 }} />
-                <span style={{ fontWeight: 600, color: '#333', fontSize: '1.05rem' }}>Educación Sostenible</span>
+            {/* Logo patrocinador debajo del bloque amarillo, alineado a la izquierda */}
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', margin: '18px 0 0 40px' }}>
+                <img src="/logogobierno.png" alt="Logo Gobierno" style={{ width: 70, borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 12 }} />
+                <span style={{ fontWeight: 600, color: '#333', fontSize: '1.05rem', alignSelf: 'center' }}>Gobierno de España</span>
             </div>
         </div>
     );
