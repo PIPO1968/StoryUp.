@@ -54,9 +54,13 @@ export default function Home() {
                 </div>
             </div>
             {/* Columna lateral de patrocinadores */}
-            <div style={{ width: 220, minWidth: 160, margin: '40px 40px 40px 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '24px 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
-                <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.15rem', marginBottom: 18, letterSpacing: 1, textAlign: 'center', width: '100%' }}>PATROCINADO POR:</h3>
-                <div style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
+            <div style={{ width: 220, minWidth: 160, margin: '40px 40px 0 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* Bloque amarillo con título centrado */}
+                <div style={{ background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '18px 12px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.15rem', letterSpacing: 1, textAlign: 'center', margin: 0 }}>PATROCINADO POR:</h3>
+                </div>
+                {/* Bloque blanco para patrocinadores debajo */}
+                <div style={{ background: '#fff', borderRadius: 12, boxShadow: '0 1px 6px #0001', padding: '16px 10px', width: '100%', marginTop: 16, display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     <img src="/logogobierno.png" alt="Logo Gobierno" style={{ width: 54, borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 10, marginLeft: 0 }} />
                     <span style={{ fontWeight: 600, color: '#333', fontSize: '0.95rem', alignSelf: 'center' }}>Gobierno de Canarias apoyando los proyectos de Educación y Cultura</span>
                 </div>
