@@ -61,8 +61,8 @@ export default function Home() {
                 </div>
                 {/* Bloque blanco para patrocinadores debajo */}
                 <div style={{ background: '#fff', borderRadius: 12, boxShadow: '0 1px 6px #0001', padding: '16px 10px', width: '100%', marginTop: 16, display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                    <img src="/logogobierno.png" alt="Logo Gobierno" style={{ width: 60, height: 60, objectFit: 'contain', borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 10, marginLeft: 0, flex: '0 0 25%' }} />
-                    <span style={{ fontWeight: 600, color: '#333', fontSize: '0.95rem', alignSelf: 'center' }}>Gobierno de Canarias apoyando los proyectos de Educación y Cultura</span>
+                    <img src="/logoeducacion.JPG" alt="Logo Educación" style={{ width: 60, height: 60, objectFit: 'contain', borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 10, marginLeft: 0, flex: '0 0 25%' }} />
+                    <span style={{ fontWeight: 600, color: '#333', fontSize: '0.95rem', alignSelf: 'center' }}>Educación Sostenible apoyando los proyectos de Educación y Cultura</span>
                 </div>
             </div>
         </div>
