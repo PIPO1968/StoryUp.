@@ -3,7 +3,7 @@ export default function Home() {
     return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             {/* Bloque principal a la izquierda */}
-            <div style={{ padding: 40, maxWidth: 1000, margin: '40px 0 40px 60px', background: '#f8f9fa', borderRadius: 16, boxShadow: '0 2px 12px #0001', flex: '1 1 0%' }}>
+            <div style={{ padding: 40, maxWidth: 1000, margin: '40px 0 40px 60px', background: '#f8f9fa', borderRadius: 16, boxShadow: '0 2px 12px #0001', flex: 1 }}>
                 {/* Bloque superior: texto de bienvenida y logo */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
                     <div style={{ flex: 1, textAlign: 'left' }}>
@@ -53,14 +53,13 @@ export default function Home() {
                     <a href="/login" style={{ background: '#28a745', color: '#fff', padding: '14px 32px', borderRadius: 8, fontWeight: 600, fontSize: '1.1rem', textDecoration: 'none', boxShadow: '0 1px 6px #0001', transition: 'background 0.2s' }}>Iniciar sesión</a>
                 </div>
             </div>
-            {/* Bloque patrocinadores a la derecha */}
-            <div style={{ width: 320, minWidth: 220, margin: '40px 40px 0 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '32px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
-                <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.3rem', marginBottom: 18, letterSpacing: 1 }}>PATROCINADO POR:</h3>
-            </div>
-            {/* Logo patrocinador debajo del bloque amarillo, alineado a la izquierda */}
-            <div style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', margin: '18px 0 0 40px' }}>
-                <img src="/logogobierno.png" alt="Logo Gobierno" style={{ width: 70, borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 12 }} />
-                <span style={{ fontWeight: 600, color: '#333', fontSize: '1.05rem', alignSelf: 'center' }}>Gobierno de España</span>
+            {/* Columna lateral de patrocinadores */}
+            <div style={{ width: 220, minWidth: 160, margin: '40px 40px 40px 0', background: '#fffbe6', borderRadius: 16, boxShadow: '0 2px 12px #0002', padding: '24px 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }}>
+                <h3 style={{ color: '#b8860b', fontWeight: 700, fontSize: '1.15rem', marginBottom: 18, letterSpacing: 1, textAlign: 'center', width: '100%' }}>PATROCINADO POR:</h3>
+                <div style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
+                    <img src="/logogobierno.png" alt="Logo Gobierno" style={{ width: 54, borderRadius: 8, boxShadow: '0 1px 6px #0002', marginRight: 10, marginLeft: 0 }} />
+                    <span style={{ fontWeight: 600, color: '#333', fontSize: '0.95rem', alignSelf: 'center' }}>Gobierno de Canarias apoyando los proyectos de Educación y Cultura</span>
+                </div>
             </div>
         </div>
     );
