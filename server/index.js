@@ -31,12 +31,15 @@ const fs = require('fs');
 const buildPath = path.join(__dirname, '../client/build');
 if (fs.existsSync(buildPath)) {
     app.use(express.static(buildPath));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(buildPath, 'index.html'));
-    });
 } else {
     app.get('/', (req, res) => {
         res.send('API de StoryUp funcionando');
+    });
+}
+// Handler de rutas del frontend (debe ir al final)
+if (fs.existsSync(buildPath)) {
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(buildPath, 'index.html'));
     });
 }
 
