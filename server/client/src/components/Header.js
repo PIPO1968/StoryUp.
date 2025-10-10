@@ -55,16 +55,18 @@ export default function Header() {
                 <span style={{ marginLeft: 16 }}>Usuarios: {usuarios}</span>
                 <span style={{ marginLeft: 16 }}>Online: {online}</span>
                 <span style={{ flex: 1, textAlign: 'center' }}>{fechaHora}</span>
-                <select style={{ marginRight: 8 }} value={idioma} onChange={e => setIdioma(e.target.value)}>
-                    <option>Español</option>
-                    <option>Inglés</option>
-                    <option>Francés</option>
-                    <option>Alemán</option>
-                    <option>Chino</option>
-                </select>
-                {logueado && (
-                    <button style={{ background: '#e74c3c', color: '#fff', fontWeight: 600, borderRadius: 6, padding: '8px 18px', border: 'none', cursor: 'pointer', marginRight: 0 }} onClick={handleLogout}>Cerrar sesión</button>
-                )}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <select style={{ marginRight: 0 }} value={idioma} onChange={e => setIdioma(e.target.value)}>
+                        <option>Español</option>
+                        <option>Inglés</option>
+                        <option>Francés</option>
+                        <option>Alemán</option>
+                        <option>Chino</option>
+                    </select>
+                    {logueado && (
+                        <button style={{ background: '#e74c3c', color: '#fff', fontWeight: 600, borderRadius: 6, padding: '8px 18px', border: 'none', cursor: 'pointer' }} onClick={handleLogout}>Cerrar sesión</button>
+                    )}
+                </div>
             </div>
         </header>
     );
