@@ -1,7 +1,7 @@
 import React from 'react';
 export default function Home() {
     return (
-        <div style={{ padding: 40, maxWidth: 1000, margin: 'auto', background: '#f8f9fa', borderRadius: 16, boxShadow: '0 2px 12px #0001' }}>
+        <div style={{ padding: 40, maxWidth: 1000, margin: '40px 0 40px 60px', background: '#f8f9fa', borderRadius: 16, boxShadow: '0 2px 12px #0001', float: 'left' }}>
             {/* Bloque superior: texto de bienvenida y logo */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
                 <div style={{ flex: 1, textAlign: 'left' }}>
