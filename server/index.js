@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'https://storyup-frontend.onrender.com',
+        'http://localhost:3000'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Middleware para permitir 'unsafe-eval' en scripts (React build)
@@ -26,7 +32,6 @@ const buildPath = path.join(__dirname, '../client/build');
 if (fs.existsSync(buildPath)) {
     app.use(express.static(buildPath));
     app.get('*', (req, res) => {
-        if (req.path.startsWith('/api')) return res.status(404).send('API not found');
         res.sendFile(path.join(buildPath, 'index.html'));
     });
 } else {
