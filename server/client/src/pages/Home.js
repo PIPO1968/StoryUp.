@@ -8,8 +8,8 @@ export default function Home() {
                     <h1 style={{ fontSize: '2.2rem', marginBottom: 10 }}>¡Bienvenido a StoryUp.es!</h1>
                     <h2 style={{ fontWeight: 400, color: '#555', marginBottom: 0 }}>Tu red social educativa para crear, compartir y aprender</h2>
                 </div>
-                <div style={{ minWidth: 220, textAlign: 'center' }}>
-                    <img src="/logo-grande.png.png" alt="Logo StoryUp" style={{ width: 220, marginLeft: 30 }} />
+                <div style={{ minWidth: 140, textAlign: 'center' }}>
+                    <img src="/logo-grande.png.png" alt="Logo StoryUp" style={{ width: 140, marginLeft: 18 }} />
                 </div>
             </div>
             {/* Bloques informativos en filas de tres columnas */}
