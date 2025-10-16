@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.StoryUp"
+		},
+		{
+			"path": "client/public"
+		},
+		{
+			"path": "../../../../StoryUp.es"
+		}
+	],
+	"settings": {}
+}

@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
+const authRouter = require('./routes/auth');
+
 app.use(cors({
     origin: [
         'https://storyup-frontend.onrender.com',
@@ -11,6 +13,8 @@ app.use(cors({
     credentials: true
 }));
 app.use(express.json());
+
+app.use('/api/auth', authRouter);
 
 // Middleware para permitir 'unsafe-eval' en scripts (React build)
 app.use((req, res, next) => {
@@ -28,6 +32,17 @@ mongoose.connect('mongodb+srv://pipocanarias_db_user:PaLMeRiTa1968@teamsoccer.a4
 
 const path = require('path');
 const fs = require('fs');
+
+// Servir favicon.ico si existe
+const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
+app.get('/favicon.ico', (req, res) => {
+    if (fs.existsSync(faviconPath)) {
+        res.sendFile(faviconPath);
+    } else {
+        res.status(404).end();
+    }
+});
+
 const buildPath = path.join(__dirname, '../client/build');
 if (fs.existsSync(buildPath)) {
     app.use(express.static(buildPath));
@@ -55,6 +70,8 @@ const userSchema = new mongoose.Schema({
     centroNombre: String
 }, { collection: 'usuarios' });
 const Usuario = mongoose.model('Usuario', userSchema);
+// Modelo de historia con comentarios
+const Historia = require('./models/Historia');
 
 // Endpoint: registro de usuario
 app.post('/api/register', async (req, res) => {
@@ -82,6 +99,32 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
+// Endpoint: obtener comentarios de una historia
+app.get('/api/historias/:id/comentarios', async (req, res) => {
+    try {
+        const historia = await Historia.findById(req.params.id);
+        if (!historia) return res.status(404).json({ error: 'Historia no encontrada.' });
+        res.json({ comentarios: historia.comentarios });
+    } catch (err) {
+        res.status(500).json({ error: 'Error al obtener comentarios.' });
+    }
+});
+
+// Endpoint: añadir comentario a una historia
+app.post('/api/historias/:id/comentarios', async (req, res) => {
+    const { usuario, texto } = req.body;
+    try {
+        const historia = await Historia.findById(req.params.id);
+        if (!historia) return res.status(404).json({ error: 'Historia no encontrada.' });
+        const nuevoComentario = { usuario, texto, fecha: new Date() };
+        historia.comentarios.push(nuevoComentario);
+        historia.actualizada = new Date();
+        await historia.save();
+        res.json({ ok: true, comentario: nuevoComentario });
+    } catch (err) {
+        res.status(500).json({ error: 'Error al añadir comentario.' });
+    }
+});
 // Endpoint: login de usuario
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
